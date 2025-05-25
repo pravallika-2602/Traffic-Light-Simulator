@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Traffic Light Simulator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .traffic-light {
+      width: 100px;
+      margin: 0 auto 20px auto;
+      background-color: #333;
+      padding: 20px;
+      border-radius: 20px;
+    }
+    .light {
+      width: 60px;
+      height: 60px;
+      margin: 10px auto;
+      border-radius: 50%;
+      background-color: #555;
+      transition: background-color 0.3s;
+    }
+    .active-red {
+      background-color: red;
+    }
+    .active-yellow {
+      background-color: yellow;
+    }
+    .active-green {
+      background-color: green;
+    }
+    .controls button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Traffic Light Simulator</h2>
+
+  <div class="traffic-light">
+    <div id="red" class="light"></div>
+    <div id="yellow" class="light"></div>
+    <div id="green" class="light"></div>
+  </div>
+
+  <div class="controls">
+    <button onclick="activateLight('red')">Stop</button>
+    <button onclick="activateLight('yellow')">Ready</button>
+    <button onclick="activateLight('green')">Go</button>
+  </div>
+
+  <script>
+    function activateLight(color) {
+      document.getElementById('red').className = 'light';
+      document.getElementById('yellow').className = 'light';
+      document.getElementById('green').className = 'light';
+
+      document.getElementById(color).classList.add(`active-${color}`);
+    }
+  </script>
+</body>
+</html>
